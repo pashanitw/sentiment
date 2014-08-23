@@ -1,21 +1,20 @@
-<!--
 
--->
         <div>
-            <article class="left">
-
+            <div class="left">
+                <article>
                 <ul>
                     <li data-ng-repeat="brand in brands" style="list-style: none">
                         <a ng-bind="brand.name" style="cursor: pointer" ng-click="getBrandStats(brand.name)"></a>
                     </li>
                 </ul>
-            </article>
-            <div>
+                </article>
+            </div>
+            <div class="right">
                 <article data-ng-repeat="result in results">
-                        <div class="left">
+                        <div style="width: 80%;float: left;">
                             <img ng-src="{{result.imgSrc}}">
                             <p>{{result.tweet}}
-                                <a href="{{result.tweetLink}}" target="_blank">Link</a></p>
+                                <a href="{{result.tweetLink}}" ng-show="result.tweetLink" target="_blank">Link</a></p>
                         </div>
                         <table>
                             <tr>

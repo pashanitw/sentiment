@@ -9,24 +9,31 @@ App.controller('ResultsController', [
         function mapModel(data){
             $scope.results=[];
             var t,s,sentimentModel;
-            for(var i=0;i<data.length;i++){
-                t=data[i].tweet;
-                s=data[i].sentiment;
-                 sentimentModel={
-                    imgSrc: t.user.profile_image_url,
-                    tweetLink: 'http://twitter.com/' + t.user.screen_name + '/status/' + t.id_str,
-                    tweet: t.text,
-                    score: s.score ? s.score : '--',
-                    comparative: s.comparative ? s.comparative : '--',
-                    favorited: t.favorite_count ? t.favorite_count : 0,
-                    retweet: t.retweet_count ? t.retweet_count : 0,
-                    wordsMatched: s.words && s.words.length ? s.words : '--',
-                    positiveWords: s.positive && s.positive.length ? s.positive : '--',
-                    negativeWords: s.negative && s.negative.length ? s.negative : '--'
-                };
-                $scope.results.push(sentimentModel);
+            if (data.length > 0) {
+                for(var i=0;i<data.length;i++){
+                    t=data[i].tweet;
+                    s=data[i].sentiment;
+                    sentimentModel={
+                        imgSrc: t.user.profile_image_url,
+                        tweetLink: 'http://twitter.com/' + t.user.screen_name + '/status/' + t.id_str,
+                        tweet: t.text,
+                        score: s.score ? s.score : '--',
+                        comparative: s.comparative ? s.comparative : '--',
+                        favorited: t.favorite_count ? t.favorite_count : 0,
+                        retweet: t.retweet_count ? t.retweet_count : 0,
+                        wordsMatched: s.words && s.words.length ? s.words : '--',
+                        positiveWords: s.positive && s.positive.length ? s.positive : '--',
+                        negativeWords: s.negative && s.negative.length ? s.negative : '--'
+                    };
+                    $scope.results.push(sentimentModel);
+                }
+            } else {
+                    sentimentModel={
+                        tweet: "No Results Found!",
+                        tweetLink: null
+                    }
+                    $scope.results.push(sentimentModel);
             }
-
         }
         $scope.$on('$viewContentLoaded', function () {
             loadBrands();

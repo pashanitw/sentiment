@@ -14,7 +14,8 @@ $(document).ready(function() {
             type: 'POST',
             url: '/search',
             data: {
-                search: text
+                search: text,
+                language: "english"
             },
             beforeSend: function(xhr) {
                 $('.tweet-results').html('');
