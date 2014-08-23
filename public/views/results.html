@@ -1,39 +1,55 @@
-<article>
-    <div class="left">
-        <img src="{{=imgSrc}}">
-        <p>{{=tweet}}
-            <a href="{{=tweetLink}}" target="_blank">Link</a></p>
-    </div>
-    <div class="right">
-        <table>
-            <tr>
-                <td>Score</td>
-                <td>{{=score}}</td>
-            </tr>
-            <tr>
-                <td>Comparative</td>
-                <td>{{=comparative}}</td>
-            </tr>
-            <tr>
-                <td>Favorited</td>
-                <td>{{=favorited}}</td>
-            </tr>
-            <tr>
-                <td>Retweeted</td>
-                <td>{{=retweet}}</td>
-            </tr>
-            <tr>
-                <td>Words Matched</td>
-                <td>{{=wordsMatched}}</td>
-            </tr>
-            <tr>
-                <td>Positive Words</td>
-                <td>{{=positiveWords}}</td>
-            </tr>
-            <tr>
-                <td>Negative Words</td>
-                <td>{{=negativeWords}}</td>
-            </tr>
-        </table>
-    </div>
-</article>
+<!--
+
+-->
+        <div>
+            <article class="left">
+
+                <ul>
+                    <li data-ng-repeat="brand in brands" style="list-style: none">
+                        <a ng-bind="brand.name" style="cursor: pointer" ng-click="getBrandStats(brand.name)"></a>
+                    </li>
+                </ul>
+            </article>
+            <div>
+                <article data-ng-repeat="result in results">
+                        <div class="left">
+                            <img ng-src="{{result.imgSrc}}">
+                            <p>{{result.tweet}}
+                                <a href="{{result.tweetLink}}" target="_blank">Link</a></p>
+                        </div>
+                        <table>
+                            <tr>
+                                <td>Score</td>
+                                <td>{{result.score}}</td>
+                            </tr>
+                            <tr>
+                                <td>Comparative</td>
+                                <td>{{result.comparative}}</td>
+                            </tr>
+                            <tr>
+                                <td>Favorited</td>
+                                <td>{{result.favorited}}</td>
+                            </tr>
+                            <tr>
+                                <td>Retweeted</td>
+                                <td>{{result.retweet}}</td>
+                            </tr>
+                            <tr>
+                                <td>Words Matched</td>
+                                <td>{{result.wordsMatched}}</td>
+                            </tr>
+                            <tr>
+                                <td>Positive Words</td>
+                                <td>{{result.positiveWords}}</td>
+                            </tr>
+                            <tr>
+                                <td>Negative Words</td>
+                                <td>{{result.negativeWords}}</td>
+                            </tr>
+                        </table>
+                </article>
+            </div>
+        </div>
+
+
+
