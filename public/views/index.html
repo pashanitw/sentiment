@@ -8,16 +8,20 @@
 
 <body>
 <div ng-app="sentiment">
-    <div ng-view></div>
+
+   <span data-ng-bind="message"></span>
+    <div class="wrapper" ng-if="isLoggedIn" ng-include="'views/layout.html'" close-popup></div>
+    <div ng-if="!isLoggedIn">
+        <div ng-view></div>
+    </div>
 </div>
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="bower_components/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
 <script type="text/javascript" src="scripts/bootstrap.js"></script>
-<script src="scripts/routes.js"></script>
-<script src="scripts/loginctrl.js"></script>
-<script src="scripts/resultsctrl.js"></script>
+<scipt src="scripts/routes.js"></scipt>
+<scipt src="scripts/loginctrl.js"></scipt>
+<scipt src="scripts/resultsctrl.js"></scipt>
 
 </body>
 </html>
