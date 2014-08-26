@@ -4,7 +4,7 @@ App.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when(routeObj.route, routeObj.config);
     });
     $routeProvider.otherwise({
-        redirectTo: '/home'
+        redirectTo: '/results'
     });
 }]);
 /* this function is responsible for routing configuration */

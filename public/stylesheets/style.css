@@ -45,6 +45,21 @@ article {
     -moz-box-shadow: 6px 4px 9px 1px rgba(119, 119, 119, 0.75);
     -webkit-box-shadow: 6px 4px 9px 1px rgba(119, 119, 119, 0.75);
 }
+
+article1 {
+    background: #fff;
+    display: block;
+    padding: 18px;
+    border: 1px solid #eee;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    overflow: scroll;
+    height: 400px;
+    box-shadow: 6px 4px 9px 1px rgba(119, 119, 119, 0.75);
+    -moz-box-shadow: 6px 4px 9px 1px rgba(119, 119, 119, 0.75);
+    -webkit-box-shadow: 6px 4px 9px 1px rgba(119, 119, 119, 0.75);
+}
+
 article img {
     width: 64px;
     float: left;
@@ -59,3 +74,27 @@ article img {
 .right table td {
     width: 50%;
 }
+
+.not-active {
+    list-style: none;
+    height: 18px;
+}
+
+.active {
+    background-color: dodgerblue;
+    color : white;
+}
+
+.active a {
+    color: #ffffff;
+}
+
+.not-active:hover {
+    background-color: dodgerblue;
+}
+
+.not-active:hover a {
+   color: #ffffff;
+}
+
+

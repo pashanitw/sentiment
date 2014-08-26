@@ -6,6 +6,8 @@ App.controller('ResultsController', [
     '$scope','$http',
     function ($scope,$http) {
 
+        var prevBrandSelection;
+
         function mapModel(data){
             $scope.results=[];
             var t,s,sentimentModel;
@@ -46,9 +48,15 @@ App.controller('ResultsController', [
 
             })
         }
-        $scope.getBrandStats=function(brandname){
+        $scope.getBrandStats=function(brand){
+            //document.getElementById("selectedBrand").backgroundColor = "blue";
+            if(prevBrandSelection) {
+                prevBrandSelection.active = false;
+            }
+            prevBrandSelection = brand;
+            brand.active = true;
             var data= {
-                search: brandname
+                search: brand.name
             }
             $http.post('/search', data).then(function(resp){
                 mapModel(resp.data);

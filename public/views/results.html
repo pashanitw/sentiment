@@ -1,13 +1,13 @@
 
         <div>
             <div class="left">
-                <article>
-                <ul>
-                    <li data-ng-repeat="brand in brands" style="list-style: none">
-                        <a ng-bind="brand.name" style="cursor: pointer" ng-click="getBrandStats(brand.name)"></a>
-                    </li>
-                </ul>
-                </article>
+                <article1>
+                    <ul>
+                        <li data-ng-repeat="brand in brands" class="not-active" ng-class="{true: 'active'}[brand.active]">
+                            <a  ng-bind="brand.name" style="cursor: pointer;" ng-click="getBrandStats(brand)"></a>
+                        </li>
+                    </ul>
+                </article1>
             </div>
             <div class="right">
                 <article data-ng-repeat="result in results">
@@ -21,10 +21,10 @@
                                 <td>Score</td>
                                 <td>{{result.score}}</td>
                             </tr>
-                            <tr>
+                           <!-- <tr>
                                 <td>Comparative</td>
                                 <td>{{result.comparative}}</td>
-                            </tr>
+                            </tr>-->
                             <tr>
                                 <td>Favorited</td>
                                 <td>{{result.favorited}}</td>
